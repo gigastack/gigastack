@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  gigatest:
+    image: docker-gigatest
+    build:
+      context: ./
+      target: dev
+      dockerfile: Dockerfile
+    container_name: gigatest_c
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+      - /usr/app/.next
+    ports:
+      - "3000:3000"
