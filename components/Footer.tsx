@@ -11,7 +11,7 @@ const Footer = (props: Props) => {
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className=" lg:col-span-8">
             <h2 className="font-bold ">
-              Let's curate credible solutions to problems
+              Let&apos;s curate credible solutions to problems
             </h2>
             <a
               className="btn-line text- uppercase mt-8 text-slate-800 font-bold inline-block before:bg-slate-800 after:bg-slate-800"

@@ -48,7 +48,7 @@ const Nav = () => {
 
     tl.current.reverse();
     addNavHeight(navRef.current?.offsetHeight!);
-  }, []);
+  }, [addNavHeight]);
 
   const toggleMenu = () => {
     tl.current?.reversed(!tl.current.reversed());

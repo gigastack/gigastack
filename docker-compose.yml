@@ -1,12 +1,12 @@
 version: '3.8'
 services:
   gigatest:
-    image: docker-gigatest
+    image: docker-gigatest_prod
     build:
       context: ./
-      target: dev
+      target: production
       dockerfile: Dockerfile
-    container_name: gigatest_c
+    container_name: gigatest_c_prod
     volumes:
       - .:/usr/app
       - /usr/app/node_modules

@@ -7,23 +7,22 @@ type Props = {};
 
 const WordSlide = (props: Props) => {
   const slideRef = useRef<HTMLDivElement | null>(null);
-  const firstSlide = useRef<HTMLDivElement>(null)
-  const secondSlide = useRef<HTMLDivElement>(null)
-  let xPercent = 0
-  let direction = -1
+  const firstSlide = useRef<HTMLDivElement>(null);
+  const secondSlide = useRef<HTMLDivElement>(null);
+  let xPercent = 0;
+  let direction = -1;
 
   const animation = () => {
-    if(xPercent <= -100) {
-      xPercent = 0
+    if (xPercent <= -100) {
+      xPercent = 0;
     }
-    gsap.set(firstSlide.current, {xPercent})
-    gsap.set(secondSlide.current, {xPercent})
-    xPercent += 0.02 * direction
-    requestAnimationFrame(animation)
-  }
+    gsap.set(firstSlide.current, { xPercent });
+    gsap.set(secondSlide.current, { xPercent });
+    xPercent += 0.02 * direction;
+    requestAnimationFrame(animation);
+  };
   useLayoutEffect(() => {
-
-    requestAnimationFrame(animation)
+    requestAnimationFrame(animation);
 
     // let offset = 0;
     // let itemWidth = 0;
@@ -82,9 +81,7 @@ const WordSlide = (props: Props) => {
     // });
 
     // return () => ctx.revert();
-
-
-  }, []);
+  }, [animation]);
 
   return (
     <section className=" py-24 overflow-hidden relative">
@@ -92,7 +89,10 @@ const WordSlide = (props: Props) => {
         ref={slideRef}
         className="flex items-center whitespace-nowrap uppercase font-bold text-secondar"
       >
-        <div ref={firstSlide} className="flex items-center justify-between gap-10">
+        <div
+          ref={firstSlide}
+          className="flex items-center justify-between gap-10"
+        >
           {" "}
           <h2 className=" slide-item font-bold flex-shrink-0 basis-1/">
             Think
@@ -136,7 +136,10 @@ const WordSlide = (props: Props) => {
           <span className=" slide-item  text-[7vw] opacity-40"> - </span>
         </div>
 
-        <div ref={secondSlide} className="flex items-center justify-between gap-10">
+        <div
+          ref={secondSlide}
+          className="flex items-center justify-between gap-10"
+        >
           {" "}
           <h2 className=" slide-item font-bold flex-shrink-0 basis-1/">
             Think
