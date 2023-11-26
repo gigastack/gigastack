@@ -1,15 +1,16 @@
 version: '3.8'
 services:
-  gigatest:
-    image: docker-gigatest_prod
+  gigatest_dev:
+    # image: docker-gigatest_dev
     build:
-      context: ./
-      target: production
-      dockerfile: Dockerfile
-    container_name: gigatest_c_prod
+      context: .
+      target: dev
+    container_name: gigatest_c_dev
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
       - /usr/app/.next
     ports:
-      - "3000:3000"
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
