@@ -54,7 +54,7 @@ const Hero = (props: Props) => {
         <div className=" max-w-4xl">
           <h4 className=" uppercase text-gray-300">About Us</h4>
           <h2 ref={titleRef} className=" font-bold mt-10">
-            At <span className=" text-secondary">GigaStack</span>, we put
+            At <span className=" text-secondary font-light">Giga<span className=" font-bold">STACK</span></span>, we put
             passion and experience to work
           </h2>
         </div>

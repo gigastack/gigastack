@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   title: "GigaStack",
   description:
     "GigasStack is a fast growing software and technology startup in Nigeria.",
-    themeColor: "#0f0a3d"
+  themeColor: "#0f0a3d",
 };
 
 export default function RootLayout({
@@ -82,7 +82,7 @@ export default function RootLayout({
         className={`${maison.className} ${test.variable} ${miller.variable} relative overflow-hidde`}
       >
         <AppProvider>
-          {/* <Loader /> */}
+          <Loader />
           {/* <LoadingWrapper> */}
           <GridLines />
           <Nav />
