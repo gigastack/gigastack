@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 const Nav = () => {
   const navRef = useRef<HTMLElement | null>(null);
   const { addNavHeight } = useAppContext() as AppContextType;
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const { isOpen, onOpen } = useInvestorModal((state) => state);
   let tl = useRef<GSAPTimeline | null>(null);
@@ -28,10 +28,10 @@ const Nav = () => {
 
   useEffect(() => {
     tl.current = gsap
-      .timeline({paused: true})
+      .timeline({ paused: true, defaults: { ease: "none" } })
       .to(".menu-cover", {
         display: "block",
-        duration: 0
+        duration: 0,
       })
       .to(".overlay", {
         opacity: 1,
@@ -40,18 +40,30 @@ const Nav = () => {
         ".menu",
         {
           xPercent: -100,
-          ease: "power3.out",
+          ease: "power3.inOut",
           duration: 1,
         },
         "<"
-      );
+      )
+      .to(".nav-item", {
+        autoAlpha: 1,
+        y: 0,
+        stagger: 0.1,
+        ease: "power3.out"
+      }, "-=0.3");
 
     tl.current.reverse();
     addNavHeight(navRef.current?.offsetHeight!);
   }, [addNavHeight]);
 
-  const toggleMenu = () => {
+  const openMenu = () => {
     tl.current?.reversed(!tl.current.reversed());
+    // tl.current?.tweenFromTo(tl.current.time(), tl.current.duration(), {duration: 1, ease: "power3.inOut"})
+  };
+
+  const closeMenu = () => {
+    tl.current?.reversed(!tl.current.reversed());
+    // tl.current?.tweenFromTo(tl.current.time(), 0, {duration: 1, ease: "power3.inOut"})
   };
 
   return (
@@ -81,7 +93,7 @@ const Nav = () => {
               </div>
             </button>
             <button
-              onClick={toggleMenu}
+              onClick={openMenu}
               className=" hamburger cursor-pointer h-14 w-14 rounded-full p-3 flex flex-col gap-y-[6px] bg-seondary items-center justify-center overflow-hidden"
             >
               <div className=" w-full h-[2px] bg-white" />
@@ -90,7 +102,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <NavMenu toggleMenu={toggleMenu} />
+      <NavMenu closeMenu={closeMenu} />
     </nav>
   );
 };

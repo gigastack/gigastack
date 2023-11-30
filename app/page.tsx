@@ -7,11 +7,12 @@ import Next from "@/components/Home/Next";
 import Radical from "@/components/Home/Radical";
 import Solutions from "@/components/Home/Solutions";
 import WordSlide from "@/components/Home/WordSlide";
+import PageWrapper from "@/components/PageWrapper";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
+    <PageWrapper>
       <Hero />
       <Radical />
       <WordSlide />
@@ -36,6 +37,6 @@ export default function Home() {
       </section> */}
       <Founders />
       <About />
-    </>
+    </PageWrapper>
   );
 }

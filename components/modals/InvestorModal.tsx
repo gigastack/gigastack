@@ -17,7 +17,12 @@ const InvestorModal = (props: Props) => {
   };
 
   return (
-    <Modal className="right-[10%] left-auto translate-x-0 translate-y-0 top-[10%] z-50 grid w-auto md:w-auto max-w-md bg-white text-primary data-[state=closed]:slide-out-to-left-0 data-[state=closed]:slide-out-to-top-[8%] data-[state=open]:slide-in-from-left-0 data-[state=open]:slide-in-from-top-[8%]" title="Believe in GigaStack?" isOpen={isOpen} onClose={onClose}>
+    <Modal
+      className="right-[10%] left-auto translate-x-0 translate-y-0 top-[10%] z-50 grid w-auto md:w-auto max-w-md bg-white text-primary data-[state=closed]:slide-out-to-left-0 data-[state=closed]:slide-out-to-top-[8%] data-[state=open]:slide-in-from-left-0 data-[state=open]:slide-in-from-top-[8%]"
+      title="Believe in GigaStack?"
+      isOpen={isOpen}
+      onClose={onClose}
+    >
       <div className="flex flex-col items-left gap-y-10">
         {/* <div className=" self-end cursor-pointer text-amber-100">
           <X size={24} />
@@ -26,10 +31,9 @@ const InvestorModal = (props: Props) => {
           Believe in us
         </h3> */}
         <p className="font-light">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
-          repellat tempora id assumenda quos nisi nulla? Mollitia officia
-          distinctio optio eaque totam, ea dolorum delectus inventore saepe
-          explicabo fugit illum.
+          Prepared to take the world by storm, the gigastack team are a set of
+          dedicated and hardworking individuals guided by a common goal for which we are prepared to and
+          have been making sacrifices to see to fruition. Are you obliged to be part of our story?
         </p>
         <a
           href="mailto:"

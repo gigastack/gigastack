@@ -25,10 +25,13 @@ const ScrollProvider = () => {
   }, [pathname, searchParams]);
 
   useEffect(() => {
-      lenis.current = new Lenis({
-        smoothTouch: true,
-        smoothWheel: true,
-      });
+    lenis.current = new Lenis({
+      smoothTouch: true,
+      smoothWheel: true,
+      lerp: 0.05,
+      touchMultiplier: 3,
+      
+    });
 
     const resize = setInterval(() => {
       lenis.current?.resize();
@@ -40,7 +43,7 @@ const ScrollProvider = () => {
       clearInterval(resize);
       lenis.current?.destroy();
     };
-  }, []);
+  }, [raf]);
 
   return null;
 };

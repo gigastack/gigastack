@@ -54,12 +54,12 @@ const Hero = (props: Props) => {
   const { navHeight } = useAppContext() as AppContextType;
   return (
     <section
-      className={`overflow-hidde bg-primary rounded-b-[2rem] h-[40rem] text-white lg:h-[calc(105vh-82px)]`}
+      className={`bg-primary rounded-b-[2rem] h-[35rem text-white h-[calc(105vh-82px)] `}
       // style={{ height: `calc(105vh - ${navHeight}px)` }}
     >
       <div className="max-w-7xl mx-auto p-5 pt-10 h-full">
         <div className=" flex flex-col h-full">
-          <div className=" max-w-3 flex flex-col lg:flex-row items-center justify-center gap-20">
+          <div className=" max-w-3 flex flex-co lg:flex-row items-center justify-center gap-20">
             <h1
               ref={titleRef}
               className=" relative font-tes text-primary-20 justify-self-start self-start uppercase font-bold tracking-wide after:absolut after:w-[400px] after:h-[300px] after:rounded-full after:bg-secondary after:z-10 after:opacity70 after:blur-[170px] after:top-1/2 after:left-full"
@@ -110,9 +110,9 @@ const Hero = (props: Props) => {
           </div>
 
           <div className=" sub relative max-w-3xl ml-auto mt-auto mb-10 before:w-1/4 before:h-[1px] before:bg-current before:-translate-x-[110%] before:top-8 lg:before:absolute">
-            <h4 className=" font-mille font-light uppercase ">
+            <h3 className=" sub-hero font-miller font-light uppercas ">
               We are a team of budding intellectuals and creative engineers
-            </h4>
+            </h3>
           </div>
         </div>
       </div>

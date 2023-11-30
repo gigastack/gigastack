@@ -114,9 +114,9 @@ const Founders = (props: Props) => {
   return (
     <section className=" founders p-5 lg:p-10 relative bg-whit">
       {/* <div className="frame absolute w-full top-0 h-screen" /> */}
-      <h5 className="head font-bold text-center text-primary text-[7vw] uppercas tracking[0.1em] ">
+      <h3 className="head font-bold text-center text-primary uppercas tracking[0.1em] ">
         Meet The Founders
-      </h5>
+      </h3>
 
       <div className=" relative h-screen [&>*:first-child]:top-20 [&>*:last-child]:top-[300%] ">
         {founders.map((founder, i) => (
@@ -126,7 +126,7 @@ const Founders = (props: Props) => {
             style={{ boxShadow: "3px -5px 5px 2px rgba(48, 48, 49, 0)" }}
           >
             <div className="flex items-center flex-col-reverse lg:flex-row lg:items-start justify-between text-primar">
-              <div className=" mt-14 lg:mt-0 lg:mr-[20%]">
+              <div className=" mt-5 lg:mt-0 lg:mr-[20%]">
                 <div className="">
                   <h3 className=" text-gray-300 font-bold uppercas">{founder.name}</h3>
                   <h4 className=" text-gray-300 mb-5 uppercas">{founder.position}</h4>
@@ -135,7 +135,7 @@ const Founders = (props: Props) => {
                   <h5 className=" text-gray-300">{founder.content2}</h5>
                 </div>
 
-                <div className=" mt-20">
+                <div className=" mt-10 lg:mt-20">
                   <div className="flex items-center gap-5">
                     <a className=" " href="" target="_blank">
                       <Linkedin size={24} fill="#ffffff"  className="text-white" />
@@ -152,7 +152,7 @@ const Founders = (props: Props) => {
                 </div>
               </div>
 
-              <div className=" rounded-ful relative w-full md:w-64 h-64 flex-shrink-0">
+              <div className=" rounded-ful relative w-full h-40 md:w-64 md:h-64 flex-shrink-0">
                 <Image
                   src={founder.image}
                   alt="profile"

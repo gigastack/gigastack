@@ -11,6 +11,6 @@ services:
       - /usr/app/node_modules
       - /usr/app/.next
     ports:
-      - 3000:3000
+      - "3000:3000"
     environment:
       - NODE_ENV=development

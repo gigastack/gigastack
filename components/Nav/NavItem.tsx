@@ -11,7 +11,7 @@ type Props = {
 const NavItem = ({ title, url }: Props) => {
   const pathname = usePathname();
   return (
-    <h2>
+    <h2 className="nav-item opacity-0 translate-y-1/4">
       <Link
       className={`text-gray-400 flex gap-4 items-center group font-bold hover:translate-x-5 hover:text-gray-800 transition-all hover:transition-all hover:duration-300 duration-300 ${
         pathname === url && "text-gray-800"

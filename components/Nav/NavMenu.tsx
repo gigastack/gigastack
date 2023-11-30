@@ -5,10 +5,10 @@ import NavItem from "./NavItem";
 import gsap from "gsap";
 
 type Props = {
-  toggleMenu: () => void;
+  closeMenu: () => void;
 };
 
-const NavMenu = ({ toggleMenu }: Props) => {
+const NavMenu = ({ closeMenu }: Props) => {
   // const [hasRendered, setHasRendered] = useState(false);
   // let tl = useRef<GSAPTimeline | null>(null);
 
@@ -25,21 +25,21 @@ const NavMenu = ({ toggleMenu }: Props) => {
   //   }
   // }, [hasRendered]);
 
-  const onToggleMenu = () => {
-    toggleMenu();
+  const onCloseMenu = () => {
+    closeMenu();
   };
 
   return (
     <div className=" menu-cover hidden transition-all duration-300 fixed w-screen h-screen top-0 left-0 z-40">
       <div
-        onClick={onToggleMenu}
+        onClick={onCloseMenu}
         className="overlay opacity-0 fixed w-screen h-screen inset-0 z-40 bg-background/80 backdrop-blur-sm"
       />
 
       <div className=" menu translate-x-full fixed text-primary rounded-l-[2rem] z-40 right-0 top-0 w-full md:w-1/2  py-14 p-5 lg:p-10 bg-white h-screen flex flex-col justify-between gap-3">
         <div className="absolute top-10 right-10 z-50">
           <div
-            onClick={onToggleMenu}
+            onClick={onCloseMenu}
             className="p-2 bg-gray-200 rounded-md w-12 h-12 cursor-pointer flex flex-col items-center justify-center"
           >
             <span className=" h-[1px] w-full bg-primary inline-block rotate-45" />

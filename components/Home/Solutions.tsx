@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import gsap from "@/gsap";
 import Image from "next/image";
@@ -8,16 +8,15 @@ import { HiArrowDown } from "react-icons/hi";
 
 import solution from "@/public/images/solution.jpg";
 import SplitType from "split-type";
+import Lenis from "@studio-freight/lenis";
 
 type Props = {};
 
 const Solutions = (props: Props) => {
-
   let timeline = useRef<GSAPTimeline | null>(null);
   const contentRef = useRef(null);
 
   useLayoutEffect(() => {
-
     const splitHead = new SplitType(contentRef.current!, {
       types: "chars,lines,words",
     });
@@ -25,8 +24,8 @@ const Solutions = (props: Props) => {
     const ctx = gsap.context(() => {
       const tl = (timeline.current = gsap.timeline({
         defaults: { ease: "power3.inOut" },
-      }))
-    })
+      }));
+    });
 
     gsap.fromTo(
       splitHead.words,
@@ -41,10 +40,10 @@ const Solutions = (props: Props) => {
         y: 0,
         stagger: 0.01,
         ease: "power3.inOut",
-        duration: 1
+        duration: 1,
       }
     );
-  }, [])
+  }, []);
 
   return (
     <section className=" text-gray-700 py-12 rounded-b-[3rem]">
@@ -58,15 +57,13 @@ const Solutions = (props: Props) => {
           <div className=" lg:w-3/5 ">
             <div className=" lg:w-4/5 mr-auto">
               <h5 ref={contentRef} className=" text-lg leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                rerum ratione laborum ducimus reiciendis natus quisquam, libero{" "}
-                <br />
-                <br />
-                eius sint voluptas labore excepturi incidunt deleniti quidem
-                necessitatibus magnam dolorem ullam autem aspernatur.
-                Dignissimos enim, accusantium nam quo magni ullam quae explicabo
-                qui voluptatem, sapiente ipsum neque beatae veniam non in.
-                Doloribus!
+                Our focus is hinged on creating stacks of solutions across
+                different sectors starting from logistics. We are of the opinion
+                that we do not achieve success until we are able to provide
+                definite solutions. Among the various areas we intend to provide
+                solutions on include; Security, E-commerce, web3 and
+                decentralized smart contracts and so on. However, we have
+                decided to get underway with logistics via our solution, Eco-Riders
               </h5>
               <hr className=" border-slate-100/40 mt-5" />
               <div className="flex items-center">
@@ -77,7 +74,10 @@ const Solutions = (props: Props) => {
                   </span>
                 </button> */}
 
-                <button className=" group text-primary bg-secondary hover:bg-primary duration-300 hover:duration-300 mt-5 px-6 py-3 rounded-md h-12 w-32">
+                <button
+                  onClick={() => new Lenis().scrollTo("#ecodesc")}
+                  className=" group text-primary bg-secondary hover:bg-primary duration-300 hover:duration-300 mt-5 px-6 py-3 rounded-md h-12 w-32"
+                >
                   <div className=" relative flex items-center">
                     <span className=" absolute font-bold group-hover:text-white group-hover:translate-x-[2.5rem] transition duration-300">
                       View

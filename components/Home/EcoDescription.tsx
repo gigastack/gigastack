@@ -23,7 +23,6 @@ const EcoDescription = (props: Props) => {
         const textSplit = new SplitType(textRef.current!, {
           types: "chars",
         });
-        console.log(textSplit.lines);
         const animation = gsap.from(textSplit.chars, {
           opacity: 0.1,
           stagger: 0.3,
@@ -44,11 +43,11 @@ const EcoDescription = (props: Props) => {
   }, [hasRendered]);
 
   return (
-    <section className="eco-desc lg:h-screen py-32 lg:py-0">
+    <section id="ecodesc" className="eco-desc lg:h-screen py-32 lg:py-0">
       <div className="p-5 lg:p-10 flex items-center justify-center h-full">
         <h3
           ref={textRef}
-          className=" description-text text-[4vw] font-ligh opacity30"
+          className=" description-text font-ligh opacity30"
         >
           In accordance with our mission to create relevant, effective and
           economically viable digital products, we spearheaded a logistics

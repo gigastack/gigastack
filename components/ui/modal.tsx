@@ -33,7 +33,7 @@ const Modal: React.FC<Props> = ({
     <Dialog open={isOpen} onOpenChange={onChange}>
       <DialogContent className={className}>
         <DialogHeader>
-          <DialogTitle className=" text-[1.8vw] uppercase tracking-wide font-bold">{title}</DialogTitle>
+          <DialogTitle className="sub-hero uppercase tracking-wide font-bold">{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
         <div>{children}</div>
